@@ -12,7 +12,7 @@ https://1ywv9dczq5.execute-api.us-east-2.amazonaws.com/ALPBAPI
 ## API Key
 This API requires a key for authorization. Once you have your API key, include it in the header of each request:
 ```json
-headers: {
+"headers": {
     "x-api-key": "string"
 }
 ```
@@ -111,7 +111,15 @@ GET /teams
 ```
 
 ### 6. Auth Integration - Restricted Access Mode
-ALPB Analytics provides a simple framework for integrating with our authorization system using ```Restricted Access``` mode. To get started:
+ALPB Analytics provides a simple framework for integrating with our authorization system using ```Restricted Access``` mode. 
+#### What Does Enabling `Restricted Access Mode` For a Widget Do?  
+
+Enabling `Restricted Mode` enforces the following access rules:  
+
+- **Public Widgets** → Can only be accessed through ALPB Analytics.  
+- **Private Widgets** → Can only be accessed through ALPB Analytics by an **authorized user**.
+
+#### Getting Started With Restricted Access Mode
 
 1. From ```Home```, click ```Edit``` on the widget you want to enable restricted access for.
 2. Under ```Authorization```, enable ```Generate validation tokens```.
@@ -141,15 +149,6 @@ POST /validate-token
     "message": "string"
 }
 ```
-
-#### Summary: What Does Enabling `Restricted Mode` Do?  
-
-Enabling `Restricted Mode` enforces the following access rules:  
-
-- **Public Widgets** → Can only be accessed through ALPB Analytics.  
-- **Private Widgets** → Can only be accessed through ALPB Analytics by an **authorized user**.  
-
-
 
 ## Error Handling
 Common error responses include:
